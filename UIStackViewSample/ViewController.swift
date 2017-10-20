@@ -42,8 +42,8 @@ class ViewController: UIViewController {
         let stackView = UIStackView(frame: .zero)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .equalCentering
+        stackView.alignment = UIStackViewAlignment.top
+        stackView.distribution = .fillProportionally
         return stackView
     }()
     
@@ -59,26 +59,24 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(thirdView)
         stackView.addArrangedSubview(fourthView)
 
-        firstView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        firstView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         firstView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
-        secondView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        secondView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         secondView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
-        thirdView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        thirdView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         thirdView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
-        fourthView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        fourthView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         fourthView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        
         
         self.view.addSubview(stackView)
         
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
     }
 
