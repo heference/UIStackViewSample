@@ -10,74 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let firstView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.red
-        return view
-    }()
-    
-    let secondView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.blue
-        return view
-    }()
-    
-    let thirdView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.purple
-        return view
-    }()
-    
-    let fourthView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.green
-        return view
-    }()
-    
-    let stackView: UIStackView = {
-        let stackView = UIStackView(frame: .zero)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = UIStackViewAlignment.top
-        stackView.distribution = .fillProportionally
-        return stackView
-    }()
+    var sampleView: SampleView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.white
         
+        sampleView = SampleView()
+        sampleView?.translatesAutoresizingMaskIntoConstraints = false
         
+        self.view.addSubview(sampleView!)
         
-        stackView.addArrangedSubview(firstView)
-        stackView.addArrangedSubview(secondView)
-        stackView.addArrangedSubview(thirdView)
-        stackView.addArrangedSubview(fourthView)
-
-        firstView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        firstView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-        secondView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        secondView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-        thirdView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        thirdView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-        fourthView.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        fourthView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        self.view.addSubview(stackView)
-        
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
+        sampleView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30).isActive = true
+        sampleView?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+        sampleView?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+        sampleView?.heightAnchor.constraint(equalToConstant: 200).isActive = true
+                
     }
 
     override func didReceiveMemoryWarning() {
